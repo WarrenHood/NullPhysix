@@ -1,0 +1,10 @@
+#enviroment{
+	height:500px;
+	width:800px;
+	border:1px solid black;
+	background:grey;
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:-1;
+}
