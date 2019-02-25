@@ -55,7 +55,7 @@ function update_obj(o,delta_t){
 		if(!collide_check(colliders[other],o))continue;
 		o.vel = vec_multiply_const(collision_friction,o.vel);
 		if(o.position.x < colliders[other].position.x){
-			if(Math.abs(o.vel.x) > 20)restricted.right = true;
+			restricted.right = true;
 			if(o.vel.x > 0){
 				o.vel.x *= -1;
 				o.vel.x += (o.vel.x/Math.abs(o.vel.x))*colliders[other].vel.x*colliders[other].mass/o.mass;
@@ -64,14 +64,14 @@ function update_obj(o,delta_t){
 
 		}
 		else{
-			if(Math.abs(o.vel.x) > 20)restricted.left = true;
+			restricted.left = true;
 			if(o.vel.x > 0){
 				o.vel.x *= -1;
 				o.vel.x += (o.vel.x/Math.abs(o.vel.x))*colliders[other].vel.x*colliders[other].mass/o.mass;
 			}
 		}
 		if(o.position.y > colliders[other].position.y){
-                        if(Math.abs(o.vel.y) > 20)restricted.up = true;
+                        restricted.up = true;
 			if(o.vel.y < 0){
 				o.vel.y *= -1;
 				o.vel.y += (o.vel.y/Math.abs(o.vel.y))*colliders[other].vel.y*colliders[other].mass/o.mass;
